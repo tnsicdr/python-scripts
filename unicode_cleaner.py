@@ -18,7 +18,8 @@ if p.file_path.exists():
       print(f"Normalization: {normalized}")
       line = normalized
     
-    file.truncate(0)
+    file.seek(0)
+    file.truncate()
     file.writelines(lines)
     file.close()
     sys.exit("File Normalized")
